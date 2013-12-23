@@ -3,16 +3,21 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
+# Frontend
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+
+# DB
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'mongoid_indexing'
 gem 'mongoid_search'
+
+# Development
 gem 'zeus'
 
 group :test, :development do
