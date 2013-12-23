@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/anjlab/bootstrap-rails.git
+  revision: 461121444e24cdf78357418bfca9f2b8a9a1c518
+  specs:
+    anjlab-bootstrap-rails (3.0.3.0)
+      railties (>= 3.0)
+      sass (>= 3.2)
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: fc589421bf8bcc85769400563ac43afa3fa6af29
   specs:
@@ -192,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anjlab-bootstrap-rails!
   bson_ext
   coffee-rails (~> 4.0.0)
   database_cleaner
