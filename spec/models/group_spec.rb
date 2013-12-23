@@ -4,6 +4,8 @@ describe Group do
   it { should have_field :name }
   it { should have_many(:members).of_type(User) }
   it { should have_many :tags }
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :name }
 
   subject(:group) { create(:group) }
 
