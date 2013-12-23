@@ -3,6 +3,7 @@ class Group
 
   field :name, type: String
   has_many :members, class_name: "User"
+  has_many :tags
 
   def add_member(member)
     self.members << member

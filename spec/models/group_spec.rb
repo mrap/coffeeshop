@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Group do
   it { should have_field :name }
   it { should have_many(:members).of_type(User) }
+  it { should have_many :tags }
 
   subject(:group) { create(:group) }
 
