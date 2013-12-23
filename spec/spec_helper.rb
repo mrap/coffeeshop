@@ -1,33 +1,47 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] = 'test' # Orig: ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
+# require 'rspec/autorun' # disabled for Zeus
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
-# Checks for pending migrations before tests are run.
-# If you are not using ActiveRecord, you can remove this line.
-ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
-
 RSpec.configure do |config|
-  # ## Mock Framework
-  #
-  # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-  #
-  # config.mock_with :mocha
-  # config.mock_with :flexmock
-  # config.mock_with :rr
 
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  # :focus tag for immediate specs
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
 
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  config.use_transactional_fixtures = true
+  # :slow tag to exclude slow tests
+  config.filter_run_excluding :slow unless ENV["SLOW_SPECS"]
+   # mongoid-rspec matchers
+
+  config.include Mongoid::Matchers, type: :model
+
+  # FactoryGirl
+  config.include FactoryGirl::Syntax::Methods
+
+  require 'database_cleaner'
+  config.before(:suite) do
+    Mongoid::Indexing.create_indexes
+    DatabaseCleaner[:mongoid].strategy = :truncation
+  end
+  config.after(:suite) do
+    # removes /public/test/
+    Mongoid::Indexing.remove_indexes
+    FileUtils.rm_rf(Dir["#{Rails.root}/public/system/test"])
+  end
+  config.before(:each) do
+    DatabaseCleaner.start
+    GC.disable
+  end
+  config.after(:each) do
+    DatabaseCleaner.clean
+    GC.enable
+  end
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
