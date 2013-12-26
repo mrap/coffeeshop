@@ -1,7 +1,7 @@
 class Group
   include Mongoid::Document
 
-  has_many :members, class_name: "User"
+  has_many :members, class_name: "User", after_add: :member_added, after_remove: :member_removed
   has_many :tags
   has_many :messages
   validates :name, presence: true, uniqueness: true
@@ -13,17 +13,19 @@ class Group
 
   def add_member(member)
     self.members << member
-    update_members_count
   end
 
   def remove_member(member)
     self.members.delete(member)
-    update_members_count
   end
 
   private
 
-    def update_members_count
-      self.members_count = self.members.count
+    def member_added(member)
+      inc(members_count: 1)
+    end
+
+    def member_removed(member)
+      inc(members_count: -1)
     end
 end
