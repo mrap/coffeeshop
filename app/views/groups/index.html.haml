@@ -1,0 +1,6 @@
+%ul.list-group
+  - @groups.each do |group|
+    %li.list-group-item
+      %span.badge
+        #{group.members.count} members
+      #{group.name}
