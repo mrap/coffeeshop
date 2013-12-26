@@ -3,6 +3,7 @@ class Group
 
   has_many :members, class_name: "User"
   has_many :tags
+  has_many :messages
   validates :name, presence: true, uniqueness: true
 
   field :name, type: String
