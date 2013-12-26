@@ -1,0 +1,10 @@
+%h1
+  - if @group.members_count < 2
+    #{@group.name}
+  - else
+    #{@group.members_count} are #{@group.name}
+
+%ul.list-group
+  - @group.messages.each do |message|
+    %li.list-group-item
+      #{message.author.username}: #{message.content}
