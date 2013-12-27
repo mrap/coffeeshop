@@ -21,4 +21,12 @@ describe GroupsController do
       response.should be_successful
     end
   end
+
+  describe 'POST #create' do
+    it "should be successful" do
+      post :create, group: { name: "Programming" }
+      group = Group.where(name: "Programming").first
+      response.should redirect_to group_path(group.id)
+    end
+  end
 end
