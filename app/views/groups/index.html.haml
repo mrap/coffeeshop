@@ -1,8 +1,8 @@
-%ul.list-group
+.list-group
   - @groups.each do |group|
-    %li.list-group-item
+    .list-group-item
+      = link_to group.name, group
       %span.badge
         #{group.members.count} members
-      #{group.name}
 
 = render partial: 'form'
