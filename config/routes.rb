@@ -1,6 +1,6 @@
 DoingNow::Application.routes.draw do
 
-  devise_for :registered_users
+  devise_for :users
   root 'groups#index'
 
   resources :groups

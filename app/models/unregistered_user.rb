@@ -1,4 +1,7 @@
 class UnregisteredUser < User
+  # UnregisteredUser does not need a email or password
+  reset_callbacks :validate
+
   field :token, type: String
   validates :token, presence: true, uniqueness: true
   before_validation :refresh_token
