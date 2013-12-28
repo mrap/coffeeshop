@@ -4,7 +4,9 @@
   - else
     #{@group.members_count} are #{@group.name}
 
-%ul.list-group
+= render partial: 'new_message_form'
+
+%ul.list-group.message-group
   - @group.messages.each do |message|
     %li.list-group-item
       #{message.author.username}: #{message.content}
