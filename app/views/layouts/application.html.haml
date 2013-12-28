@@ -9,5 +9,6 @@
   %body
     %header
     .container
+      = render partial: 'shared/navbar'
       = render partial: 'shared/flash_messages', flash: flash
       = yield

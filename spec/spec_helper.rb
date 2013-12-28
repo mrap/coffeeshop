@@ -25,6 +25,12 @@ RSpec.configure do |config|
   # FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
+  # Features Helpers
+  config.include Features::SessionHelpers, type: :feature
+
+  # Devise Helpers
+  config.include Devise::TestHelpers, :type => :controller
+
   require 'database_cleaner'
   config.before(:suite) do
     Mongoid::Indexing.create_indexes
