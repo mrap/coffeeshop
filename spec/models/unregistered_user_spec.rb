@@ -9,4 +9,10 @@ describe UnregisteredUser do
   subject(:unregistered_user) { create(:unregistered_user) }
 
   it { should_not be_nil }
+
+  it "should have a random name upon creation" do
+    user = UnregisteredUser.create
+    user.username.should_not be_nil
+  end
+
 end

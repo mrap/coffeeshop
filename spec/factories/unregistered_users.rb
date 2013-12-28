@@ -3,6 +3,7 @@
 FactoryGirl.define do
   factory :unregistered_user, class: UnregisteredUser, parent: :user do
     ignore do
+      username nil
       email    nil
       password nil
     end

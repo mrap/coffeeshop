@@ -21,6 +21,7 @@ gem 'mongoid_search'
 
 # User Auth
 gem 'devise'
+gem 'bazaar'
 
 # Development
 gem 'zeus'

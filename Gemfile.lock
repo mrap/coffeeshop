@@ -45,6 +45,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    bazaar (0.0.2)
     bcrypt-ruby (3.1.2)
     bson (2.0.0)
     bson_ext (1.5.1)
@@ -229,6 +230,7 @@ PLATFORMS
 
 DEPENDENCIES
   anjlab-bootstrap-rails!
+  bazaar
   bson_ext
   capybara
   coffee-rails (~> 4.0.0)
