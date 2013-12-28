@@ -15,7 +15,6 @@ gem 'haml-rails'
 
 # DB
 gem 'mongoid', github: 'mongoid/mongoid'
-gem 'bson_ext'
 gem 'mongoid_indexing'
 gem 'mongoid_search'
 

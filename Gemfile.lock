@@ -1,12 +1,12 @@
 GIT
   remote: git://github.com/mongoid/mongoid.git
-  revision: fc589421bf8bcc85769400563ac43afa3fa6af29
+  revision: 221abac035d44d9ee4d629c5a316b168a9be0540
   specs:
     mongoid (4.0.0.alpha1)
-      activemodel (~> 4.0.0)
+      activemodel (>= 4.0.0)
       moped (~> 2.0.beta4)
       origin (~> 2.0)
-      tzinfo (~> 0.3.37)
+      tzinfo (>= 0.3.37)
 
 GEM
   remote: https://rubygems.org/
@@ -42,7 +42,6 @@ GEM
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
     bson (2.0.0)
-    bson_ext (1.5.1)
     builder (3.1.4)
     capybara (2.2.0)
       mime-types (>= 1.16)
@@ -225,7 +224,6 @@ PLATFORMS
 DEPENDENCIES
   bazaar
   bootstrap-sass
-  bson_ext
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
