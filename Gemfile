@@ -19,6 +19,9 @@ gem 'bson_ext'
 gem 'mongoid_indexing'
 gem 'mongoid_search'
 
+# User Auth
+gem 'devise'
+
 # Development
 gem 'zeus'
 
