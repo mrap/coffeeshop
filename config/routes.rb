@@ -1,5 +1,7 @@
 DoingNow::Application.routes.draw do
 
+  root 'groups#index'
+
   resources :groups
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
