@@ -18,15 +18,15 @@ describe TestController do
 
   context "when no token is present in session" do
     it "should set current user to a new unregistered user" do
-      current_user.should be_instance_of UnregisteredUser
+      current_user.should be_instance_of GuestUser
     end
   end
 
-  context "when valid unregistered_user token in session" do
-    let(:unregistered_user) { create(:unregistered_user) }
-    it "should set current user to the correct unregistered_user" do
-      session[:user_token] = unregistered_user.token
-      current_user.should eq unregistered_user
+  context "when valid guest_user token in session" do
+    let(:guest_user) { create(:guest_user) }
+    it "should set current user to the correct guest_user" do
+      session[:user_token] = guest_user.token
+      current_user.should eq guest_user
     end
   end
 

@@ -12,7 +12,7 @@ feature "Navbar" do
 
   scenario "when user is not registered" do
     visit '/'
-    user = UnregisteredUser.last
+    user = GuestUser.last
     find('.navbar') do |n|
       n.should have_content user.username
       n.should_not have_button 'Sign Ou'

@@ -9,17 +9,17 @@ class ApplicationController < ActionController::Base
 
   alias_method :devise_current_user, :current_user
   def current_user
-    super || unregistered_user
+    super || guest_user
   end
 
   private
 
-    def unregistered_user
-      unless unregistered_user = UnregisteredUser.where(token: session[:user_token]).first
-        unregistered_user = UnregisteredUser.create
-        session[:user_token] = unregistered_user.token
+    def guest_user
+      unless guest_user = GuestUser.where(token: session[:user_token]).first
+        guest_user = GuestUser.create
+        session[:user_token] = guest_user.token
       end
-      return unregistered_user
+      return guest_user
     end
 
 end
