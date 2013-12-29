@@ -10,7 +10,7 @@
 
   .collapse.navbar-collapse.navbar-ex1-collapse
     %p.navbar-text
-      = current_user.username
-      - if current_user.class == User
+      = current_or_guest_user.username
+      - if user_signed_in?
         %li= link_to "Sign out", destroy_user_session_path, method: :delete
 

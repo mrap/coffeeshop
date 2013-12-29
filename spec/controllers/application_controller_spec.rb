@@ -14,20 +14,22 @@ class TestController < ApplicationController
 end
 
 describe TestController do
-  let(:current_user) { controller.send(:current_user) }
 
-  context "when no token is present in session" do
-    it "should set current user to a new unregistered user" do
-      current_user.should be_instance_of GuestUser
+  describe "guest user" do
+    let(:current_or_guest_user) { controller.send(:current_or_guest_user) }
+
+    context "when no token is present in session" do
+      it "should correctly set the guest user" do
+        current_or_guest_user.should be_instance_of User
+      end
+    end
+
+    context "when valid guest_user_id in session" do
+      let(:guest_user) { create(:user) }
+      it "should set guest user" do
+        session[:guest_user_id] = guest_user.id
+        current_or_guest_user.should eq guest_user
+      end
     end
   end
-
-  context "when valid guest_user token in session" do
-    let(:guest_user) { create(:guest_user) }
-    it "should set current user to the correct guest_user" do
-      session[:user_token] = guest_user.token
-      current_user.should eq guest_user
-    end
-  end
-
 end

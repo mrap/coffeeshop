@@ -3,23 +3,33 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def authenticate_user!(*args)
-    current_user.present? || super(*args)
+  helper_method :current_or_guest_user
+
+  def current_or_guest_user
+    if current_user
+      if session[:guest_user_id]
+        #TODO: Convert guest_user -> user
+        guest_user.destroy
+        session[:guest_user_id] = nil
+      end
+      current_user
+    else
+      guest_user
+    end
   end
 
-  alias_method :devise_current_user, :current_user
-  def current_user
-    super || guest_user
+  def guest_user
+    @guest_user ||= User.where(id: session[:guest_user_id]).first || new_guest_user
   end
+
 
   private
 
-    def guest_user
-      unless guest_user = GuestUser.where(token: session[:user_token]).first
-        guest_user = GuestUser.create
-        session[:user_token] = guest_user.token
-      end
-      return guest_user
+    def new_guest_user
+      user = User.new
+      user.save!(validate: false)
+      session[:guest_user_id] = user.id
+      user
     end
 
 end

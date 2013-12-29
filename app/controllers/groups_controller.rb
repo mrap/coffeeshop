@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
   def post_message
     message = Message.new(params[:message])
     message.group = @group
-    message.author = current_user
+    message.author = current_or_guest_user
     if message.save!
       redirect_to @group
     end

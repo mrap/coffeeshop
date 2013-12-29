@@ -7,6 +7,7 @@ class User
 
   field :username, type: String
   validates :username, presence: true, uniqueness: true
+  after_initialize :set_random_username
 
   # Devise
   # Include default devise modules. Others available are:
@@ -42,4 +43,17 @@ class User
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
   # field :locked_at,       :type => Time
+
+  private
+
+    def set_random_username
+      self.username ||= unique_random_username
+    end
+
+    def unique_random_username
+      loop do
+        new_username = Bazaar.object
+        return new_username unless User.where(username: new_username).exists?
+      end
+    end
 end
