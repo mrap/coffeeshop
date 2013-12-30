@@ -12,6 +12,7 @@ class Group
   scope :most_members, ->{ order_by(members_count: :desc) }
 
   def add_member(member)
+    member.group.remove_member(member) if member.group && member.group != self
     self.members << member
   end
 

@@ -41,6 +41,20 @@ describe Group do
           expect{ group.remove_member(user) }.not_to change{ group.members_count }
         end
       end
+
+      context "when a user is a member of a group and joins another" do
+        let(:new_group) { create(:group) }
+        before do
+          group.add_member(user)
+          new_group.add_member(user)
+        end
+        it "should update each group's :members_count correctly" do
+          group.members_count.should eq 0
+          group.members.should_not include user
+          new_group.members_count.should eq 1
+          new_group.members.should include user
+        end
+      end
     end
 
     describe "ordering by members" do
