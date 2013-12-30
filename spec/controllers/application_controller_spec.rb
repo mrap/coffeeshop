@@ -18,9 +18,9 @@ describe TestController do
   describe "guest user" do
     let(:current_or_guest_user) { controller.send(:current_or_guest_user) }
 
-    context "when no token is present in session" do
+    context "when guest_user_id is present in session" do
       it "should correctly set the guest user" do
-        current_or_guest_user.should be_instance_of User
+        current_or_guest_user.should be_instance_of GuestUser
       end
     end
 
