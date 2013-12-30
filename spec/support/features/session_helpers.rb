@@ -1,5 +1,7 @@
 module Features
   module SessionHelpers
+
+    # Signs in user through the UI
     def sign_in_user(user = nil)
       user ||= create(:user)
       visit new_user_session_path
@@ -9,5 +11,12 @@ module Features
         click_on 'Sign in'
       end
     end
+
+    # Named Sessions (useful for multiple sessions)
+    def in_browser(name)
+      Capybara.session_name = name
+      yield
+    end
+
   end
 end
