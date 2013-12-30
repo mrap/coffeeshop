@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group.add_member(current_user)
+    @group.add_member(current_or_guest_user)
   end
 
   def create

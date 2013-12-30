@@ -15,17 +15,28 @@ describe GroupsController do
 
   describe 'GET #show' do
     let(:group)         { create(:group) }
-    let(:current_user)  { create(:user) }
 
     it "should be successful" do
       get :show, id: group.id
       response.should be_successful
     end
 
-    it "puts adds the current_user as a member" do
-      ApplicationController.any_instance.stub(:current_user).and_return(current_user)
-      get :show, id: group.id
-      group.members.should include current_user
+    context "when user is logged in" do
+      let(:current_user)  { create(:user) }
+      it "puts adds the current_user as a member" do
+        ApplicationController.any_instance.stub(:current_user).and_return(current_user)
+        get :show, id: group.id
+        group.members.should include current_user
+      end
+    end
+
+    context "when user is a guest user" do
+      let(:guest_user) { create(:guest_user) }
+      it "puts adds the current_user as a member" do
+        ApplicationController.any_instance.stub(:current_or_guest_user).and_return(guest_user)
+        get :show, id: group.id
+        group.members.should include guest_user
+      end
     end
   end
 
