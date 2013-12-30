@@ -37,4 +37,11 @@ feature "Viewing a group page" do
     page.should have_content message.author.username
   end
 
+  scenario "when the group has more than one message" do
+    message = create(:message, group: group)
+    message2 = create(:message, group: group)
+    visit group_path(group.id)
+    message2.content.should appear_before(message.content)
+  end
+
 end

@@ -40,6 +40,7 @@ group :test do
   gem 'database_cleaner'
   gem 'mongoid-rspec'
   gem 'capybara'
+  gem 'orderly'
 end
 
 group :doc do
