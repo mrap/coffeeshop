@@ -22,6 +22,10 @@ describe Group do
         it "should increment :member_count" do
           expect{group.add_member(user)}.to change{ group.members_count }.by(1)
         end
+        it "should not be able to double increment :members_count" do
+          group.add_member(user)
+          expect{group.add_member(user)}.not_to change{ group.members_count }
+        end
       end
       context "when removing members" do
         before { group.add_member(user) }
@@ -29,8 +33,12 @@ describe Group do
           group.remove_member(user)
           group.members.should_not include user
         end
-        it "should decrement :member_count" do
+        it "should decrement :members_count" do
           expect{ group.remove_member(user) }.to change{ group.members_count }.by(-1)
+        end
+        it "should not be able to double decrement :members_count" do
+          group.remove_member(user)
+          expect{ group.remove_member(user) }.not_to change{ group.members_count }
         end
       end
     end
