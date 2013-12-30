@@ -4,7 +4,7 @@ feature "A user posting a message in a group" do
 
   given(:group) { create(:group) }
   given(:user)  { create(:user) }
-  background { login_registered_user(user) }
+  background { sign_in_user(user) }
 
   scenario "when on the group page" do
     visit group_path(group)
