@@ -14,19 +14,19 @@ feature "Viewing a group page" do
     find('.group-header').should_not have_content 'You and'
   end
 
-  context "when 2 members" do
-    given(:group) { create(:group_with_members, members_count: 2) }
+  context "when 1 other member" do
+    given(:group) { create(:group_with_members, members_count: 1) }
     scenario "pages shows members count" do
       visit_page
-      find('.group-header').should have_content "You and #{group.members_count-1} other person"
+      find('.group-header').should have_content "You and 1 other person"
     end
   end
 
-  context "when 3 or more members" do
-    given(:group) { create(:group_with_members, members_count: 3) }
+  context "when 2 or more other members" do
+    given(:group) { create(:group_with_members, members_count: 2) }
     scenario "pages shows members count" do
       visit_page
-      find('.group-header').should have_content "You and #{group.members_count-1} other people"
+      find('.group-header').should have_content "You and 2 other people"
     end
   end
 
