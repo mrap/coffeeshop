@@ -4,7 +4,7 @@
   - else
     You and #{pluralize(@group.members_count-1, 'other person')} are #{@group.name}
 
-= render partial: 'new_message_form'
+= render partial: 'messages/form'
 
 %ul.list-group.message-group
   - @group.messages.each do |message|

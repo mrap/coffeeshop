@@ -1,4 +1,4 @@
-= form_for Message.new, url: { controller: :groups, action: :post_message }, class: ".form-inline" do |f|
+= form_for [@group, Message.new], html: {class: ".form-inline"} do |f|
   .form-group
     = f.label :content, class: "sr-only"
     = f.text_field :content, class: "form-control", placeholder: "message"
