@@ -46,6 +46,7 @@ group :test do
   gem 'mongoid-rspec'
   gem 'capybara'
   gem 'orderly'
+  gem 'selenium-webdriver'
 end
 
 group :doc do
