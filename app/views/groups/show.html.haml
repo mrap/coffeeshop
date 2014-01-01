@@ -5,8 +5,4 @@
     You and #{pluralize(@group.members_count-1, 'other person')} are #{@group.name}
 
 = render partial: 'messages/form'
-
-%ul.list-group.message-group
-  - @group.messages.each do |message|
-    %li.list-group-item
-      #{message.author.username}: #{message.content}
+= render partial: 'messages/list'

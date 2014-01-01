@@ -10,8 +10,10 @@ feature "A user posting a message in a group" do
     visit group_path(group)
     fill_in 'message', with: "my new message"
     click_on 'Post'
-    find('.message-group').should have_content "my new message"
-    find('.message-group').should have_content user.username
+    within('.message-list') do
+      find('.message-item').should have_content "my new message"
+      find('.message-item').should have_content user.username
+    end
   end
 
 end
