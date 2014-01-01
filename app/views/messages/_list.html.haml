@@ -1,4 +1,3 @@
 %ul.list-group.message-list
   - @group.messages.each do |message|
-    %li.list-group-item.message-item
-      #{message.author.username}: #{message.content}
+    = render message
