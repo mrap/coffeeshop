@@ -6,3 +6,5 @@
 
 = render partial: 'messages/form'
 = render partial: 'messages/list'
+
+= subscribe_to "/groups/#{@group.name}/messages/new"

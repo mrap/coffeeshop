@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'haml-rails'
+gem 'gon'
 
 # DB
 gem 'mongoid', github: 'mongoid/mongoid'
@@ -21,6 +22,10 @@ gem 'mongoid_search'
 # User Auth
 gem 'devise'
 gem 'bazaar'
+
+# Realtime Messaging
+gem 'private_pub'
+gem 'thin'
 
 # Development
 gem 'zeus'

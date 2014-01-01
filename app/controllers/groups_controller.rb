@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   def show
     @group.add_member(current_or_guest_user)
+    gon.group = @group
   end
 
   def create

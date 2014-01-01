@@ -35,7 +35,7 @@ feature "Messaging in a group" do
     end
   end
 
-  xscenario "I can see updates from other users in realtime" do
+  scenario "I can see updates from other users in realtime" do
     in_browser(:theirs) do
       fill_in 'message', with: "Hello!"
       click_on 'Post'
