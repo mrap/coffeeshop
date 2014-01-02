@@ -35,14 +35,4 @@ feature "Messaging in a group" do
     end
   end
 
-  scenario "I can see updates from other users in realtime", js: true, slow: true do
-    in_browser(:theirs) do
-      fill_in 'message', with: "Hello!"
-      click_on 'Post'
-    end
-    in_browser(:mine) do
-      page.should have_content "Hello!"
-    end
-  end
-
 end

@@ -8,9 +8,10 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(params[:message])
     @message.author = current_or_guest_user
-    if @message.save!
-      PrivatePub.publish_to "/groups/#{@group.name}/messages/new", nil
-      redirect_to @group
+    @message.save!
+    respond_to do |format|
+      format.html { redirect_to @group }
+      format.js
     end
   end
 

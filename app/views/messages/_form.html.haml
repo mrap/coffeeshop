@@ -1,6 +1,6 @@
-= form_for [@group, Message.new], html: {class: ".form-inline"} do |f|
+= form_for [@group, Message.new], html: {class: ".form-inline"}, remote: true do |f|
   .form-group
     = f.label :content, class: "sr-only"
-    = f.text_field :content, class: "form-control", placeholder: "message"
+    = f.text_field :content, class: "form-control message-field", placeholder: "message"
     = f.submit "Post", class: "btn btn-default"
 
