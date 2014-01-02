@@ -36,6 +36,9 @@ gem 'zeus'
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -47,9 +50,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'mongoid-rspec'
-  gem 'capybara'
   gem 'orderly'
-  gem 'selenium-webdriver'
 end
 
 group :doc do

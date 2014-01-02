@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Realtime messages between users" do
+feature "Realtime messages between users", js: true do
   given(:group)     { create(:group) }
   given(:me) { create(:user) }
   given(:other_user) { create(:user) }
@@ -17,7 +17,7 @@ feature "Realtime messages between users" do
       end
     end
 
-    scenario "I can see updates from other users in realtime", js: true, slow: true do
+    scenario "I can see updates from other users in realtime" do
       in_browser(:theirs) do
         fill_in 'message', with: "Hello!"
         click_on 'Post'

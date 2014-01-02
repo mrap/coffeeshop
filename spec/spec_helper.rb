@@ -31,6 +31,9 @@ RSpec.configure do |config|
   # Devise Helpers
   config.include Devise::TestHelpers, :type => :controller
 
+  # Capybara uses webkit driver
+  Capybara.javascript_driver = :webkit
+
   require 'database_cleaner'
   config.before(:suite) do
     Mongoid::Indexing.create_indexes
