@@ -1,18 +1,16 @@
 require 'spec_helper'
 
 feature "Realtime messages between users", js: true do
-  given(:group)     { create(:group) }
-  given(:me) { create(:user) }
+  given(:group)      { create(:group) }
+  given(:me)         { create(:user) }
   given(:other_user) { create(:user) }
 
   context "when they and I are both in the group" do
     background do
       in_browser(:mine) do
-        sign_in_user(me)
         visit group_path(group)
       end
       in_browser(:theirs) do
-        sign_in_user(other_user)
         visit group_path(group)
       end
     end
@@ -23,10 +21,30 @@ feature "Realtime messages between users", js: true do
         click_on 'Post'
       end
       in_browser(:mine) do
-        page.should have_content "Hello!"
+        find('.message-list').should have_content "Hello!"
       end
     end
-  end
 
+    context "when I go to another group page" do
+      background do
+        group2 = create(:group)
+        in_browser(:mine) do
+          click_on 'Doing Now'
+          click_on group2.name
+        end
+      end
+
+      scenario "I should not see their new messages" do
+        in_browser(:theirs) do
+          fill_in 'message', with: "Hello again!"
+          click_on 'Post'
+        end
+        in_browser(:mine) do
+          find('.message-list').should_not have_content "Hello again!"
+        end
+      end
+
+    end
+  end
 end
 
