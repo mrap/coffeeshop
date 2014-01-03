@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
     if current_user
       if session[:guest_user_id]
         #TODO: Convert guest_user -> user
-        guest_user.destroy
-        session[:guest_user_id] = nil
+        # guest_user.destroy
+        # session[:guest_user_id] = nil
       end
       current_user
     else

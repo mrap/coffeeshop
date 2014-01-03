@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "Navbar" do
-  scenario "when user is registered" do
+  xscenario "when user is registered" do
     user = create(:user)
     sign_in_user(user)
     find('.navbar') do |n|
@@ -10,7 +10,7 @@ feature "Navbar" do
     end
   end
 
-  scenario "when user is not registered" do
+  xscenario "when user is not registered" do
     visit '/'
     guest_user = User.last
     find('.navbar').should have_content guest_user.username
