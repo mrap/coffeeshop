@@ -28,6 +28,8 @@ gem 'thin'
 
 # Heroku
 gem 'rails_12factor'
+gem 'unicorn'
+gem 'foreman'
 
 # Development
 gem 'zeus'
