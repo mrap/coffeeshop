@@ -1,16 +1,19 @@
 %nav.navbar.navbar-default{role: "navigation"}
   .navbar-header
-    %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
-      .sr-only
-        Toggle navigation
-      .icon-bar
-      .icon-bar
-      .icon-bar
+    -# %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+    -#   .sr-only
+    -#     Toggle navigation
+    -#   .icon-bar
+    -#   .icon-bar
+    -#   .icon-bar
     = link_to t(:app_name), root_path, :class => 'navbar-brand'
-
-  .collapse.navbar-collapse.navbar-ex1-collapse
     %p.navbar-text
-      = current_or_guest_user.username
+      You are 
+      %strong= current_or_guest_user.username
+      - unless user_signed_in?
+        (guest)
+
+  -# .collapse.navbar-collapse.navbar-ex1-collapse
     -# %ul.nav.navbar-nav
     -#   %li
         -# - if user_signed_in?
