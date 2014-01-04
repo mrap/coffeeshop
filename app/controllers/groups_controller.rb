@@ -6,6 +6,11 @@ class GroupsController < ApplicationController
     @groups = Group.most_members
   end
 
+  def search
+    @groups = Group.full_text_search(params[:search])
+    render :index
+  end
+
   def show
     @group.add_member(current_or_guest_user)
     gon.group = @group

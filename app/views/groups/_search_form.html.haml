@@ -1,0 +1,5 @@
+.row
+  = form_tag search_groups_path, method: :get, class: "form-inline" do
+    .form-group
+      = text_field_tag :search, params[:search], class: "form-control input-lg", placeholder: "I am..."
+    = submit_tag "Find a group", class: "btn btn-primary btn-lg"

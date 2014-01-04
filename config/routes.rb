@@ -4,6 +4,9 @@ DoingNow::Application.routes.draw do
   root 'groups#index'
 
   resources :groups do
+    collection do
+      get 'search'
+    end
     resources :messages
   end
   # The priority is based upon order of creation: first created -> highest priority.

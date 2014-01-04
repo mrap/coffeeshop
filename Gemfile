@@ -16,7 +16,7 @@ gem 'gon'
 # DB
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'mongoid_indexing'
-gem 'mongoid_search'
+gem 'mongoid_search', github: 'mauriciozaffari/mongoid_search', branch: 'master'
 gem 'moped', github: 'mongoid/moped'
 
 # User Auth

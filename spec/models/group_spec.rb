@@ -68,5 +68,20 @@ describe Group do
         Group.most_members.to_a.should eq @expected_order
       end
     end
+
+    describe "full text search" do
+      before do
+        @programming_group = create(:group, name: "Programming")
+        @other_group = create(:group)
+      end
+      context "when searching with only a part of the group's name" do
+        let!(:results) { Group.full_text_search("pro") }
+        it "should return the correct groups" do
+          results.first.should eq @programming_group
+          results.count.should eq 1
+        end
+      end
+    end
+
   end
 end

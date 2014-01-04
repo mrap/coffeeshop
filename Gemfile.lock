@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/mauriciozaffari/mongoid_search.git
+  revision: 65b3a50bf518e50e0157eeb30912d337f6f540be
+  branch: master
+  specs:
+    mongoid_search (0.3.2)
+      fast-stemmer (~> 1.0.0)
+      mongoid (>= 3.0.0)
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: 221abac035d44d9ee4d629c5a316b168a9be0540
   specs:
@@ -169,9 +178,6 @@ GEM
       mongoid (>= 3)
       moped (>= 1.4)
       rails (>= 3.1)
-    mongoid_search (0.3.2)
-      fast-stemmer (~> 1.0.0)
-      mongoid (>= 3.0.0)
     multi_json (1.8.2)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -306,7 +312,7 @@ DEPENDENCIES
   mongoid!
   mongoid-rspec
   mongoid_indexing
-  mongoid_search
+  mongoid_search!
   moped!
   orderly
   private_pub

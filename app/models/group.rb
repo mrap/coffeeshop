@@ -1,5 +1,6 @@
 class Group
   include Mongoid::Document
+  include Mongoid::Search
 
   has_many :members, class_name: "User", before_add: :adding_member, before_remove: :removing_member
   has_many :tags
@@ -8,6 +9,8 @@ class Group
 
   field :name, type: String
   field :members_count, type: Integer, default: 0
+
+  search_in :name
 
   scope :most_members, ->{ order_by(members_count: :desc) }
 
