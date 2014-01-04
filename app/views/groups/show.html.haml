@@ -1,10 +1,12 @@
-%h1.group-header
-  - if @group.members_count < 2
-    #{@group.name}
-  - else
-    You and #{pluralize(@group.members_count-1, 'other person')} are #{@group.name}
+.jumbotron
+  %h2.group-header
+    - if @group.members_count < 2
+      #{@group.name}
+    - else
+      You and #{pluralize(@group.members_count-1, 'other person')} are #{@group.name}
 
-= render partial: 'messages/form'
+  = render partial: 'messages/form'
+
 = render partial: 'messages/list'
 
 = subscribe_to "/groups/#{@group.name}/messages/new"

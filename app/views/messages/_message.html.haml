@@ -1,2 +1,5 @@
 %li.list-group-item.message-item
-  #{message.author.username}: #{message.content}
+  .text-muted
+    #{message.author.username}:
+  %p.lead.message-content
+    #{message.content}

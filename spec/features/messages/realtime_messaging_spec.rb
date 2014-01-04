@@ -17,8 +17,8 @@ feature "Realtime messages between users", js: true do
 
     scenario "I can see updates from other users in realtime" do
       in_browser(:theirs) do
-        fill_in 'message', with: "Hello!"
-        click_on 'Post'
+        fill_in I18n.t('new_message_prompt'), with: "Hello!"
+        click_on I18n.t 'new_message_button'
       end
       in_browser(:mine) do
         find('.message-list').should have_content "Hello!"
@@ -36,8 +36,8 @@ feature "Realtime messages between users", js: true do
 
       scenario "I should not see their new messages" do
         in_browser(:theirs) do
-          fill_in 'message', with: "Hello again!"
-          click_on 'Post'
+          fill_in I18n.t('new_message_prompt'), with: "Hello again!"
+          click_on I18n.t 'new_message_button'
         end
         in_browser(:mine) do
           find('.message-list').should_not have_content "Hello again!"

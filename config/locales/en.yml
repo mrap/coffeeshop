@@ -22,3 +22,5 @@
 en:
   app_name: "Doing Now"
   tag_line: "Do things together."
+  new_message_button: "Let everyone know"
+  new_message_prompt: "What's on your mind?"

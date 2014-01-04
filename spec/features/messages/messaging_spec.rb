@@ -18,16 +18,16 @@ feature "Messaging in a group" do
 
   scenario "I can see my own updates" do
     in_browser(:mine) do
-      fill_in 'message', with: "My Message!"
-      click_on 'Post'
+      fill_in I18n.t('new_message_prompt'), with: "My Message!"
+      click_on I18n.t 'new_message_button'
       page.should have_content "My Message!"
     end
   end
 
   scenario "I can see updates from other users (after reloading)" do
     in_browser(:theirs) do
-      fill_in 'message', with: "Hello!"
-      click_on 'Post'
+      fill_in I18n.t('new_message_prompt'), with: "Hello!"
+      click_on I18n.t 'new_message_button'
     end
     in_browser(:mine) do
       visit group_path(group)
