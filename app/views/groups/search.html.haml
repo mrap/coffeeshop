@@ -1,0 +1,20 @@
+= form_tag search_groups_path, method: :get, class: "form-inline" do
+  .form-group
+    = text_field_tag :search, params[:search], class: "form-control", placeholder: "I am..."
+  = submit_tag "Find a group", class: "btn btn-primary"
+
+.jumbotron
+  %p
+    - unless @groups.empty?
+      We found some groups that match
+      %strong #{@search_term}:
+    - else
+      We couldn't find any groups that are
+      %strong #{@search_term}
+      = button_to groups_path(group: {name: @search_term}), method: :post, class: "btn btn-info btn-lg" do
+        Let's start the
+        %strong #{@search_term}
+        group
+
+  - unless @groups.empty?
+    = render partial: 'list'

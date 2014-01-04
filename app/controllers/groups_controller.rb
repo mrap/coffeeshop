@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
 
   def search
     @groups = Group.full_text_search(params[:search])
-    render :index
+    @search_term = params[:search]
   end
 
   def show
