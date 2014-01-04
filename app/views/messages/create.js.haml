@@ -1,3 +1,3 @@
-- publish_to "/groups/#{@message.group.name}/messages/new" do
+- publish_to "/groups/#{@group.id}/messages/new" do
   $(".message-list").prepend("#{j render(@message)}");
   $(".message-field").val("");

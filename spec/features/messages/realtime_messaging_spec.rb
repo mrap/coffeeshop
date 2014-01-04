@@ -45,6 +45,27 @@ feature "Realtime messages between users", js: true do
       end
 
     end
+
+    context "when in a group has whitespace in its name" do
+      background do
+        group_with_whitespace = create(:group, name: "two words")
+        in_browser(:mine) do
+          visit group_path(group_with_whitespace)
+        end
+        in_browser(:theirs) do
+          visit group_path(group_with_whitespace)
+        end
+      end
+      scenario "messages still appear in realtime" do
+        in_browser(:theirs) do
+          fill_in I18n.t('new_message_prompt'), with: "Hello!"
+          click_on I18n.t 'new_message_button'
+        end
+        in_browser(:mine) do
+          find('.message-list').should have_content "Hello!"
+        end
+      end
+    end
   end
 end
 
