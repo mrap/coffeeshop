@@ -31,6 +31,7 @@ gem 'thin'
 gem 'rails_12factor'
 gem 'unicorn'
 gem 'foreman'
+gem 'newrelic_rpm'
 
 # Development
 gem 'zeus'
