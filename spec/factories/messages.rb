@@ -2,7 +2,6 @@
 
 FactoryGirl.define do
   factory :message do
-    group  { create(:group) }
     author { create(:user) }
     sequence(:content) { |n| "message #{n}" }
   end

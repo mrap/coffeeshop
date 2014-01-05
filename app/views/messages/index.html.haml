@@ -1,0 +1,13 @@
+.jumbotron
+  %h1= t('tag_line')
+  -# %h2.group-header
+  -#   - if @group.members_count < 2
+  -#     #{@group.name}
+  -#   - else
+  -#     You and #{pluralize(@group.members_count-1, 'other person')} are #{@group.name}
+
+  = render partial: 'form'
+
+= render partial: 'list'
+
+= subscribe_to "/messages/new"

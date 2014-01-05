@@ -1,23 +1,18 @@
 class MessagesController < ApplicationController
-  before_action :set_group
 
   def index
-    redirect_to @group
+    @messages = Message.all
   end
 
+
   def create
-    @message = @group.messages.new(params[:message])
+    @message = Message.new(params[:message])
     @message.author = current_or_guest_user
     @message.save!
     respond_to do |format|
-      format.html { redirect_to @group }
+      format.html { redirect_to action: "index" }
       format.js
     end
   end
 
-  private
-
-    def set_group
-      @group = Group.find(params[:group_id])
-    end
 end

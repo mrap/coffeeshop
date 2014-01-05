@@ -1,4 +1,4 @@
-= form_for [@group, Message.new], html: {class: ".form-inline"}, remote: true do |f|
+= form_for Message.new, html: {class: ".form-inline"}, remote: true do |f|
   .form-group
     %small.text-muted
       #{current_or_guest_user.username}:
