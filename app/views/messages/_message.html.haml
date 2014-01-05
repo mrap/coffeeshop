@@ -1,5 +1,12 @@
 %li.list-group-item.message-item
-  .text-muted
-    #{message.author.username}:
-  %p.lead.message-content
-    #{message.content}
+  .row
+    .col-xs-7
+      .small.text-info
+        #{message.author.username}:
+    .col-xs-5
+      .small.text-muted.text-right
+        #{time_ago_in_words(message.created_at)}
+  .row
+    .col-xs-12
+      %p.lead.message-content
+        #{message.content}
