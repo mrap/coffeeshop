@@ -1,5 +1,8 @@
 Visit the Coffeeshop
 ====================
+
+[![Code Climate](https://codeclimate.com/github/mrap/coffeeshop.png)](https://codeclimate.com/github/mrap/coffeeshop)
+
 Currently, the project is live [here](http://doingnow.herokuapp.com/).
 
 Doing work alone sucks.  It's much more enjoyable when there are other productive people are around.
