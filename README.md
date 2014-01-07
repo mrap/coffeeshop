@@ -7,7 +7,7 @@ Kind of like working at a coffeeshop?  *Exactly* like working in a coffeeshop. (
 
 Visit the Coffeeshop
 --------------------
-Currently, the project is live (here)[http://doingnow.herokuapp.com/].
+Currently, the project is live [here](http://doingnow.herokuapp.com/).
 
 ### Want to Contribute?
 
