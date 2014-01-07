@@ -27,5 +27,6 @@ Please message me if you have any questions!
   * Add feature: A visitor can submit a suggestion. (**BDD required**)
     * Suggestions will be publicly listed at `/suggestions`
   * Fix: When a user posts a new message, other chatters' text fields should not clear.
-
+  * Messages can be a maximum 300 characters.
+  * Prevent user from spamming the chat room excessively.
 
