@@ -1,4 +1,4 @@
-DoingNow::Application.routes.draw do
+Coffeeshop::Application.routes.draw do
 
   devise_for :users
   root 'messages#index'

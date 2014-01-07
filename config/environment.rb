@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
-DoingNow::Application.initialize!
+Coffeeshop::Application.initialize!

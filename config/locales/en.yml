@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  app_name: "Doing Now"
+  app_name: "Coffeeshop"
   tag_line: "Welcome to the virtual cafe."
   new_message_button: "Let everyone know"
   new_message_prompt: "What's on your mind?"

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DoingNow::Application.load_tasks
+Coffeeshop::Application.load_tasks

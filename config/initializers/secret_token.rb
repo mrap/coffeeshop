@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DoingNow::Application.config.secret_key_base = '0b12f54a15151f46572c5f90666bf728961d090bb7e1842f3b2aaa990733f7e995dc36ab403acf2fae8092724e5c9f50e4de480935632fcabbec706d38080b66'
+Coffeeshop::Application.config.secret_key_base = '0b12f54a15151f46572c5f90666bf728961d090bb7e1842f3b2aaa990733f7e995dc36ab403acf2fae8092724e5c9f50e4de480935632fcabbec706d38080b66'
