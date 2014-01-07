@@ -19,7 +19,6 @@ Please message me if you have any questions!
 
   #### High Priority
 
-    * Fix: When a user posts a new message, other chatters' text fields should not clear.
     * Prevent user from spamming the chat room excessively.
     * Messages can be a maximum 300 characters.
 
