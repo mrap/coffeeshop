@@ -29,4 +29,5 @@ Please message me if you have any questions!
   * Fix: When a user posts a new message, other chatters' text fields should not clear.
   * Messages can be a maximum 300 characters.
   * Prevent user from spamming the chat room excessively.
+  * When a user posts, everyone gets a sound notification.  Should be able to be silenced.
 
