@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
 
   def index
-    @messages = Message.all
+    @messages = Message.all.limit(10)
+    # limit is a temporary fix to the lack of pagination.
   end
 
 

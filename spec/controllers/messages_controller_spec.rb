@@ -5,7 +5,7 @@ describe MessagesController do
   describe "GET #index" do
     it "should assign all messages" do
       get :index
-      assigns(:messages).should eq Message.all
+      assigns(:messages).should eq Message.all.limit(10)
     end
   end
 
