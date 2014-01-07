@@ -1,3 +1,4 @@
 - publish_to "/messages/new" do
   $(".message-list").prepend("#{j render(@message)}");
+- if current_or_guest_user == @message.author
   $(".message-field").val("");
