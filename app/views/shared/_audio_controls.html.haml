@@ -1,2 +1,19 @@
-%audio{preload: "auto", autoplay: "", controls: "", loop: ""}
-  %source{src: "#{AUDIO_URL}"}
+.env-sounds-player
+  %audio{id: "env_audio", preload: "auto", autoplay: "", controls: "", loop: ""}
+    %source{src: "#{AUDIO_URL}"}
+
+  %button{type: "button", class:"btn btn-default btn-sm env-button", onclick: "audio_play_pause()"}
+    %span.glyphicon.glyphicon-pause "Um-beyonce"
+
+:javascript
+  $('#env_audio').hide();
+  function audio_play_pause() {
+    var env_audio = $('#env_audio')[0];
+    if (env_audio.paused) {
+      $('.env-button span').removeClass("glyphicon-play").addClass("glyphicon-pause");
+      env_audio.play();
+    } else {
+      $('.env-button span').removeClass("glyphicon-pause").addClass("glyphicon-play");
+      env_audio.pause();
+    }
+  }

@@ -12,7 +12,7 @@
       %strong= current_or_guest_user.username
       - unless user_signed_in?
         (guest)
-    .pull-left
+    %form.navbar-form.navbar-right
       = render partial: 'shared/audio_controls'
 
   -# .collapse.navbar-collapse.navbar-ex1-collapse
