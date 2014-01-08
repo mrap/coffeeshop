@@ -36,6 +36,8 @@ Please message me if you have any questions!
   * When a user posts, everyone gets a sound notification.
     * Should be able to be silenced.
   * Add video background of cafe movement
+  * Positions new message field near chat messages.
+    * New message and message list should be in the same area.
 
 #### Icebox
   * Older versions of Firefox may need an OGG version of the audio.
