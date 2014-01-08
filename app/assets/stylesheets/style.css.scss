@@ -1,0 +1,33 @@
+.jumbotron {
+  // border: 1px solid rgba(127,127,127,0.3);
+  // box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+.jumbotron h1 {
+  color: #D7AF72;
+  font-size: 38px;
+}
+.navbar-default .navbar-text {
+  color: #F6E6CC;
+}
+.env-button {
+  padding: 5px 10px;
+  font-size: 12px;
+  text-shadow: none;
+  border: 1px solid #000;
+}
+.message-content {
+  color: #fff;
+  margin: 0 15px;
+}
+.form-group {
+  text-align: left;
+}
+.message-list {
+  border: 1px solid rgba(127,127,127,0.5);
+}
+.message-list .small.text-muted {
+  color: rgba(255,255,255,0.2);
+}
+.message-list .small.text-info {
+  color: #BA832C;
+}
