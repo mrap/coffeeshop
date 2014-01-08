@@ -20,19 +20,23 @@ Please message me if you have any questions!
 
 ### TODO List
 
-  #### High Priority
+#### High Priority
 
     * Prevent user from spamming the chat room excessively.
     * Messages can be a maximum 300 characters.
 
- #### Everything Else
+#### Everything Else
 
-    * Usernames should not have whitespace.  URL friendly like `gorgeous-sharpie`.
-    * Display the current number of chatters.
-      * Example: "You and 5 others are now at the coffeeshop."
-      * Make specs in `add-chatters-count` branch pass
-    * Add feature: A visitor can submit a suggestion. (**BDD required**)
-      * Suggestions will be publicly listed at `/suggestions`
-    * When a user posts, everyone gets a sound notification.
-      * Should be able to be silenced.
+  * Usernames should not have whitespace.  URL friendly like `gorgeous-sharpie`.
+  * Display the current number of chatters.
+    * Example: "You and 5 others are now at the coffeeshop."
+    * Make specs in `add-chatters-count` branch pass
+  * Add feature: A visitor can submit a suggestion. (**BDD required**)
+    * Suggestions will be publicly listed at `/suggestions`
+  * When a user posts, everyone gets a sound notification.
+    * Should be able to be silenced.
+  * Add video background of cafe movement
+
+#### Icebox
+  * Older versions of Firefox may need an OGG version of the audio.
 
