@@ -22,8 +22,13 @@ Please message me if you have any questions!
 
 #### High Priority
 
-    * Prevent user from spamming the chat room excessively.
-    * Messages can be a maximum 300 characters.
+  * Prevent user from spamming the chat room excessively.
+  * Messages can be a maximum 300 characters.
+
+#### branch `add-feature-requests`
+
+  * Implement up/down voting into the UI.
+  * Feature Requests can have many comments.
 
 #### Everything Else
 
@@ -31,8 +36,6 @@ Please message me if you have any questions!
   * Display the current number of chatters.
     * Example: "You and 5 others are now at the coffeeshop."
     * Make specs in `add-chatters-count` branch pass
-  * Add feature: A visitor can submit a suggestion. (**BDD required**)
-    * Suggestions will be publicly listed at `/suggestions`
   * When a user posts, everyone gets a sound notification.
     * Should be able to be silenced.
   * Add video background of cafe movement
