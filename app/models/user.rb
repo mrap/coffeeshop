@@ -2,6 +2,7 @@ class User
   include Mongoid::Document
 
   has_many :messages, inverse_of: :author, dependent: :destroy
+  has_many :feature_requests, inverse_of: :requester, dependent: :destroy
 
   field :username, type: String
   validates :username, presence: true, uniqueness: true
