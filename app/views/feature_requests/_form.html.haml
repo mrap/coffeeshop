@@ -1,0 +1,6 @@
+= form_for @feature_request || FeatureRequest.new, html: {class: ".form-inline"} do |f|
+  .form-group
+    = f.label :description, class: "sr-only"
+    = f.text_area :description, class: "form-control", placeholder: t('new_feature_request_prompt') , size: "20x3"
+  .text-center
+    = f.submit t('new_feature_request_button'), class: "btn btn-primary"

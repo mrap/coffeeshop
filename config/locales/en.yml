@@ -24,3 +24,7 @@ en:
   tag_line: "Welcome to the virtual cafe."
   new_message_button: "Let everyone know"
   new_message_prompt: "What's on your mind?"
+
+  new_feature_request_prompt: "What could make the coffeeshop better?"
+  new_feature_request_button: "Request this feature"
+  flash_success_create_feature_request: "Feature requested!"

@@ -1,0 +1,12 @@
+%li.list-group-item.feature-request-item
+  .row
+    .col-xs-7
+      .small.text-info
+        #{feature_request.requester.username}:
+    .col-xs-5
+      .small.text-muted.text-right
+        #{time_ago_in_words(feature_request.created_at)}
+  .row
+    .col-xs-12
+      %p.lead.feature-request-description
+        #{feature_request.description}

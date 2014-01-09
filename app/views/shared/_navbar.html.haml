@@ -1,25 +1,39 @@
 %nav.navbar.navbar-default{role: "navigation"}
+  / Everything within navbar-header stays visible at all times
+  / reguardless of screen size.
   .navbar-header
-    -# %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
-    -#   .sr-only
-    -#     Toggle navigation
-    -#   .icon-bar
-    -#   .icon-bar
-    -#   .icon-bar
+    / Toggle navigation button (mobile only)
+    %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+      .sr-only
+        Toggle navigation
+      .icon-bar
+      .icon-bar
+      .icon-bar
+
+    / Logo
     = link_to t(:app_name), root_path, :class => 'navbar-brand'
+
+    / Username
     %p.navbar-text
-      You are 
+      You are
       %strong= current_or_guest_user.username
       - unless user_signed_in?
         (guest)
-    %form.navbar-form.navbar-right
-      = render partial: 'shared/audio_controls'
 
-  -# .collapse.navbar-collapse.navbar-ex1-collapse
-    -# %ul.nav.navbar-nav
-    -#   %li
-        -# - if user_signed_in?
-        -#   = link_to "Sign out", destroy_user_session_path, method: :delete
-        -# - else
-        -#   = link_to "Sign In", new_user_session_path
+  / Everything below will be hidden on mobile only.
+  / Unhide by tapping the toggle navigation button.
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    %ul.nav.navbar-nav
+
+      / Feature Requests link
+      %li= link_to 'Feature Requests', feature_requests_path
+
+    / Play/Pause Button for ambience
+    = render partial: 'shared/audio_controls'
+
+    -# %li
+    -#   - if user_signed_in?
+    -#     = link_to "Sign out", destroy_user_session_path, method: :delete
+    -#   - else
+    -#     = link_to "Sign In", new_user_session_path
 
