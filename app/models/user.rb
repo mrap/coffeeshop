@@ -3,6 +3,7 @@ class User
 
   has_many :messages, inverse_of: :author, dependent: :destroy
   has_many :feature_requests, inverse_of: :requester, dependent: :destroy
+  has_many :votes, inverse_of: :voter, dependent: :destroy
 
   field :username, type: String
   validates :username, presence: true, uniqueness: true

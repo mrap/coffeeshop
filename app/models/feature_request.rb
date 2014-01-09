@@ -2,6 +2,8 @@ class FeatureRequest
   include Mongoid::Document
 
   belongs_to :requester, class_name: "User"
+  has_many :votes, as: :votable
+
   field :description, type: String
 
   validates_presence_of :requester
