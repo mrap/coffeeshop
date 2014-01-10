@@ -1,10 +1,9 @@
-= form_for Message.new, html: {class: ".form-inline"}, remote: true do |f|
+%h4.message-prompt-username
+  #{current_or_guest_user.username}:
+= form_for Message.new, html: {class: "form-inline"}, remote: true do |f|
   .form-group
-    %small
-      #{current_or_guest_user.username}:
-
     = f.label :content, class: "sr-only"
     = f.text_field :content, class: "form-control input-lg message-field", placeholder: t('new_message_prompt')
-  .text-center
-    = f.submit t('new_message_button'), class: "btn btn-primary btn-lg"
+
+  = f.submit t('new_message_button'), class: "btn btn-primary btn-lg"
 
