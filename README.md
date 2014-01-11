@@ -27,7 +27,6 @@ Please message me if you have any questions!
 
 #### branch `add-feature-requests`
 
-  * Implement up/down voting into the UI.
   * Feature Requests can have many comments.
 
 #### Everything Else
