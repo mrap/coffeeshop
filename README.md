@@ -2,6 +2,7 @@ Visit the Coffeeshop
 ====================
 
 [![Code Climate](https://codeclimate.com/github/mrap/coffeeshop.png)](https://codeclimate.com/github/mrap/coffeeshop)
+[![Build Status](https://travis-ci.org/mrap/coffeeshop.png)](https://travis-ci.org/mrap/coffeeshop)
 
 Currently, the project is live [here](http://doingnow.herokuapp.com/).
 
