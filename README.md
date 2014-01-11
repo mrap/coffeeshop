@@ -27,6 +27,7 @@ Please message me if you have any questions!
 
 #### branch `add-feature-requests`
 
+  * Feature Request can be marked as `completed`
   * Feature Requests can have many comments.
 
 #### Everything Else
