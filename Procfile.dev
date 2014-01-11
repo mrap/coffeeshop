@@ -1,0 +1,2 @@
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
+pubsub: rackup private_pub.ru -s thin -E production

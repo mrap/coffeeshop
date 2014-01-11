@@ -44,3 +44,16 @@ Please message me if you have any questions!
 #### Icebox
   * Older versions of Firefox may need an OGG version of the audio.
 
+### Develooment Environment
+
+#### Prereqs
+
+* Ruby version specified in .ruby-version
+* Mongodb
+
+#### Starting Development Server
+
+1. `bundle` to ensure you've got everything installed.
+2. `bundle exec foreman start --procfile=Procfile.dev` to start the application and the realtime private pub server.
+3. You can access the application at http://localhost:5000/.
+
