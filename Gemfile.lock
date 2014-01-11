@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/mauriciozaffari/mongoid_search.git
+  remote: https://github.com/mauriciozaffari/mongoid_search
   revision: 65b3a50bf518e50e0157eeb30912d337f6f540be
   branch: master
   specs:
@@ -8,46 +8,46 @@ GIT
       mongoid (>= 3.0.0)
 
 GIT
-  remote: git://github.com/mongoid/mongoid.git
-  revision: 221abac035d44d9ee4d629c5a316b168a9be0540
+  remote: https://github.com/mongoid/mongoid
+  revision: 5915e9f576eadf685926235e8b4aa6e98e468140
   specs:
-    mongoid (4.0.0.alpha1)
+    mongoid (4.0.0.alpha2)
       activemodel (>= 4.0.0)
-      moped (~> 2.0.beta4)
-      origin (~> 2.0)
+      moped (~> 2.0.beta5)
+      origin (~> 2.1)
       tzinfo (>= 0.3.37)
 
 GIT
-  remote: git://github.com/mongoid/moped.git
-  revision: a8f96c57042af193f63a24ac4b52209865c45868
+  remote: https://github.com/mongoid/moped
+  revision: a2cda45884714808eec1d39d4fbb743d4b206a0e
   specs:
-    moped (2.0.0.beta4)
-      bson (~> 2.0)
+    moped (2.0.0.beta5)
+      bson (~> 2.1)
       connection_pool (~> 1.2)
       optionable (~> 0.2.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.0.1)
-      actionpack (= 4.0.1)
+    actionmailer (4.0.2)
+      actionpack (= 4.0.2)
       mail (~> 2.5.4)
-    actionpack (4.0.1)
-      activesupport (= 4.0.1)
+    actionpack (4.0.2)
+      activesupport (= 4.0.2)
       builder (~> 3.1.0)
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    activemodel (4.0.1)
-      activesupport (= 4.0.1)
+    activemodel (4.0.2)
+      activesupport (= 4.0.2)
       builder (~> 3.1.0)
-    activerecord (4.0.1)
-      activemodel (= 4.0.1)
+    activerecord (4.0.2)
+      activemodel (= 4.0.2)
       activerecord-deprecated_finders (~> 1.0.2)
-      activesupport (= 4.0.1)
+      activesupport (= 4.0.2)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.3)
-    activesupport (4.0.1)
+    activesupport (4.0.2)
       i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
       multi_json (~> 1.3)
@@ -60,9 +60,9 @@ GEM
     bcrypt-ruby (3.1.2)
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
-    bson (2.0.0)
+    bson (2.1.0)
     builder (3.1.4)
-    capybara (2.2.0)
+    capybara (2.2.1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
@@ -137,10 +137,10 @@ GEM
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
-    guard-rspec (4.2.3)
+    guard-rspec (4.2.4)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    haml (4.0.4)
+    haml (4.0.5)
       tilt
     haml-rails (0.5.3)
       actionpack (>= 4.0.1)
@@ -178,13 +178,13 @@ GEM
       mongoid (>= 3)
       moped (>= 1.4)
       rails (>= 3.1)
-    multi_json (1.8.2)
+    multi_json (1.8.4)
     newrelic_rpm (3.7.1.182)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     optionable (0.2.0)
     orderly (0.0.2)
-    origin (2.0.0)
+    origin (2.1.0)
     orm_adapter (0.5.0)
     polyglot (0.3.3)
     private_pub (1.0.3)
@@ -196,22 +196,22 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails (4.0.1)
-      actionmailer (= 4.0.1)
-      actionpack (= 4.0.1)
-      activerecord (= 4.0.1)
-      activesupport (= 4.0.1)
+    rails (4.0.2)
+      actionmailer (= 4.0.2)
+      actionpack (= 4.0.2)
+      activerecord (= 4.0.2)
+      activesupport (= 4.0.2)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.0.1)
+      railties (= 4.0.2)
       sprockets-rails (~> 2.0.0)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
-    railties (4.0.1)
-      actionpack (= 4.0.1)
-      activesupport (= 4.0.1)
+    railties (4.0.2)
+      actionpack (= 4.0.2)
+      activesupport (= 4.0.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.12.0)
@@ -219,7 +219,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
-    rdoc (3.12.2)
+    rdoc (4.1.1)
       json (~> 1.4)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -243,9 +243,9 @@ GEM
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    sdoc (0.3.20)
-      json (>= 1.1.3)
-      rdoc (~> 3.10)
+    sdoc (0.4.0)
+      json (~> 1.8)
+      rdoc (~> 4.0, < 5.0)
     selenium-webdriver (2.39.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -278,7 +278,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.7.0)
+    unicorn (4.8.0)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
@@ -318,7 +318,7 @@ DEPENDENCIES
   newrelic_rpm
   orderly
   private_pub
-  rails (= 4.0.1)
+  rails (= 4.0.2)
   rails_12factor
   rspec-rails
   sass-rails (~> 4.0.0)
