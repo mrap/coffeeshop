@@ -53,3 +53,17 @@ feature "A user can upvote or downvote a feature request once" do
   end
 
 end
+
+feature "Feature request can be marked as 'completed'" do
+  # Currently, feature requests are set as 'completed'
+  # via the production server's rails console
+  background do
+    create(:feature_request, completed: true)
+  end
+
+  scenario "completed feature requests display as 'completed'" do
+    visit feature_requests_path
+    page.should have_content "Completed"
+  end
+
+end

@@ -6,6 +6,7 @@ class FeatureRequest
   has_many :votes, as: :votable
 
   field :description, type: String
+  field :completed, type: Boolean, default: false
 
   validates_presence_of :requester
   validates :description, presence: true, length: { within: 15..600 }

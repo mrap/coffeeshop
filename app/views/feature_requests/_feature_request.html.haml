@@ -20,3 +20,8 @@
         .col-xs-12
           %p.lead.feature-request-description
             #{feature_request.description}
+      - if feature_request.completed
+        .row
+          .col-xs-12
+            %p.label.label-success
+              Completed
