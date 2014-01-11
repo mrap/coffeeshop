@@ -1,12 +1,22 @@
 %li.list-group-item.feature-request-item
   .row
-    .col-xs-7
-      .small.text-info
-        #{feature_request.requester.username}:
-    .col-xs-5
-      .small.text-muted.text-right
-        #{time_ago_in_words(feature_request.created_at)}
-  .row
-    .col-xs-12
-      %p.lead.feature-request-description
-        #{feature_request.description}
+    .col-xs-1
+      .label.votes-total
+        #{feature_request.votes_total}
+    .col-xs-1
+      =button_to upvote_feature_request_path(feature_request), class: "btn btn-default btn-xs" ,id: "upvote" do
+        .glyphicon.glyphicon-arrow-up
+      =button_to downvote_feature_request_path(feature_request), class: "btn btn-default btn-xs" ,id: "downvote" do
+        .glyphicon.glyphicon-arrow-down
+    .col-xs-10
+      .row
+        .col-xs-7
+          .small.text-info
+            #{feature_request.requester.username}:
+        .col-xs-5
+          .small.text-muted.text-right
+            #{time_ago_in_words(feature_request.created_at)}
+      .row
+        .col-xs-12
+          %p.lead.feature-request-description
+            #{feature_request.description}

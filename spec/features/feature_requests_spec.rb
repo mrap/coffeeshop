@@ -22,3 +22,34 @@ feature "A user can create a feature request" do
   end
 
 end
+
+feature "A user can upvote or downvote a feature request once" do
+
+  background do
+    create(:feature_request)
+  end
+
+  scenario "upvoting a feature request" do
+    visit feature_requests_path
+    click_on 'upvote'
+    find('.votes-total').should have_content '1'
+  end
+
+  scenario "downvoting a feature request" do
+    visit feature_requests_path
+    click_on 'downvote'
+    find('.votes-total').should have_content '-1'
+  end
+
+  feature "reversing vote" do
+    background do
+      visit feature_requests_path
+      click_on 'upvote'
+    end
+    scenario "changing user's upvote to downvote" do
+      click_on 'downvote'
+      find('.votes-total').should have_content '-1'
+    end
+  end
+
+end

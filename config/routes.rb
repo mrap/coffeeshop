@@ -3,7 +3,12 @@ Coffeeshop::Application.routes.draw do
   devise_for :users
   root 'messages#index'
   resources :messages
-  resources :feature_requests
+  resources :feature_requests do
+    member do
+      post 'upvote'
+      post 'downvote'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

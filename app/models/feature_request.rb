@@ -10,4 +10,8 @@ class FeatureRequest
   validates_presence_of :requester
   validates :description, presence: true, length: { within: 15..600 }
 
+  def votes_total
+    Vote.total_for(self)
+  end
+
 end
