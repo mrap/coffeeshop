@@ -4,6 +4,10 @@ class User
   has_many :messages, inverse_of: :author, dependent: :destroy
   has_many :feature_requests, inverse_of: :requester, dependent: :destroy
   has_many :votes, inverse_of: :voter, dependent: :destroy
+  belongs_to :shop, inverse_of: :owner
+  belongs_to :barista_shop, class_name: "Shop", inverse_of: :barista
+  belongs_to :patron_shop, class_name: "Shop",inverse_of: :patron
+  
 
   field :username, type: String
   validates :username, presence: true, uniqueness: true
