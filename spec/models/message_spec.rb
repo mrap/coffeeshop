@@ -6,6 +6,7 @@ describe Message do
   it { should have_field :created_at }
   it { should validate_presence_of :author }
   it { should validate_presence_of :content }
+  it { should validate_length_of(:content).with_maximum(Message::MAX_LENGTH) }
 
   describe "scopes by most recent" do
     before do
