@@ -1,4 +1,9 @@
+language: ruby
 rvm:
   - 2.0.0-p247
 services:
   - mongodb
+before_script:
+  - bundle exec rackup private_pub.ru -s thin -E production & # Start private pub server in the bg
+  - sleep 3 # Give server time to start
+script: bundle exec rspec spec

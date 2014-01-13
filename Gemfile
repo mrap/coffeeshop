@@ -42,6 +42,7 @@ group :test, :development do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'selenium-webdriver'
+  gem 'poltergeist' # PhantomJS driver for Capybara tests
 end
 
 group :development do

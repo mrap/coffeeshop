@@ -14,8 +14,6 @@ feature "Realtime messages between users", js: true do
   end
 
   scenario "I can see updates from other users in realtime" do
-    pending if ENV['CI']
-
     in_browser(:theirs) do
       fill_in I18n.t('new_message_prompt'), with: "Hello!"
       click_on I18n.t 'new_message_button'
@@ -26,8 +24,6 @@ feature "Realtime messages between users", js: true do
   end
 
   scenario "when my text box is not empty and another user posts a message" do
-    pending if ENV['CI']
-
     in_browser(:mine) do
       fill_in 'Content', with: "Incomplete message"
     end

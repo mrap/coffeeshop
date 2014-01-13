@@ -3,6 +3,7 @@ ENV['RAILS_ENV'] = 'test' # Orig: ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
 # require 'rspec/autorun' # disabled for Zeus
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -32,7 +33,7 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
 
   # Capybara uses webkit driver
-  Capybara.javascript_driver = :webkit
+  Capybara.javascript_driver = :poltergeist
 
   require 'database_cleaner'
   config.before(:suite) do
