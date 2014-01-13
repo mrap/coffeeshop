@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 gem 'rails', '4.0.1'
+gem 'zeus'
 
 # Frontend
 gem 'sass-rails', '~> 4.0.0'
@@ -26,15 +27,14 @@ gem 'bazaar'
 # Realtime Messaging
 gem 'private_pub'
 gem 'thin'
-
-# Heroku
-gem 'rails_12factor'
-gem 'unicorn'
 gem 'foreman'
-gem 'newrelic_rpm'
 
-# Development
-gem 'zeus'
+
+group :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+  gem 'newrelic_rpm'
+end
 
 group :test, :development do
   gem 'rspec-rails'
