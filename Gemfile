@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.0.0'
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.2'
 gem 'zeus'
 
 # Frontend
@@ -15,10 +15,10 @@ gem 'haml-rails'
 gem 'gon'
 
 # DB
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid', git: 'https://github.com/mongoid/mongoid'
 gem 'mongoid_indexing'
-gem 'mongoid_search', github: 'mauriciozaffari/mongoid_search', branch: 'master'
-gem 'moped', github: 'mongoid/moped'
+gem 'mongoid_search', git: 'https://github.com/mauriciozaffari/mongoid_search', branch: 'master'
+gem 'moped', git: 'https://github.com/mongoid/moped'
 
 # User Auth
 gem 'devise'
