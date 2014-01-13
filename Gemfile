@@ -16,7 +16,6 @@ gem 'gon'
 
 # DB
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid'
-gem 'mongoid_indexing'
 gem 'mongoid_search', git: 'https://github.com/mauriciozaffari/mongoid_search', branch: 'master'
 gem 'moped', git: 'https://github.com/mongoid/moped'
 

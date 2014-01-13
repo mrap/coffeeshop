@@ -37,12 +37,10 @@ RSpec.configure do |config|
 
   require 'database_cleaner'
   config.before(:suite) do
-    Mongoid::Indexing.create_indexes
     DatabaseCleaner[:mongoid].strategy = :truncation
   end
   config.after(:suite) do
     # removes /public/test/
-    Mongoid::Indexing.remove_indexes
     FileUtils.rm_rf(Dir["#{Rails.root}/public/system/test"])
   end
   config.before(:each) do

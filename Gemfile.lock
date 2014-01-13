@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/mongoid/mongoid
-  revision: 5915e9f576eadf685926235e8b4aa6e98e468140
+  revision: 1e5347928a5d1839bcd249e123d8dde10e1bee4a
   specs:
     mongoid (4.0.0.alpha2)
       activemodel (>= 4.0.0)
