@@ -1,4 +1,4 @@
-[Visit](http://doingnow.herokuapp.com/) the Coffeeshop
+Visit the [Coffeeshop](http://doingnow.herokuapp.com/)
 ======================================================
 
 [![Code Climate](https://codeclimate.com/github/mrap/coffeeshop.png)](https://codeclimate.com/github/mrap/coffeeshop)
